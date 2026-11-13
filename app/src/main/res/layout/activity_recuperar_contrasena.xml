@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9FF">
+
+    <View
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:translationX="42dp"
+        android:translationY="-64dp"
+        android:background="@drawable/fondo_halo_crear_sleeptrack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/contenedorPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="26dp"
+            android:paddingTop="79dp"
+            android:paddingEnd="26dp"
+            android:paddingBottom="28dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recupera tu acceso"
+                android:textColor="#282039"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Te ayudamos a volver a SleepTrack."
+                android:textColor="#877E9A"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="116dp"
+                    android:layout_height="116dp"
+                    android:background="@drawable/bg_circulo_icono">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Seguridad"
+                        android:src="@drawable/icono_escudo" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="¿Olvidaste tu contraseña?"
+                    android:textColor="#282039"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Introduce tu correo para solicitar instrucciones de recuperación."
+                    android:textColor="#877E9A"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:text="Correo electrónico"
+                android:textColor="#877E9A"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/fondo_campo_crear_sleeptrack"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="13dp"
+                    android:contentDescription="Icono de correo"
+                    android:src="@drawable/ic_correo_sleeptrack" />
+
+                <EditText
+                    android:id="@+id/etCorreoRecuperacion"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@null"
+                    android:autofillHints="emailAddress"
+                    android:hint="tucorreo@ejemplo.com"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:gravity="center_vertical"
+                    android:textColor="#282039"
+                    android:textColorHint="#877E9A"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/fondo_privacidad_crear_sleeptrack"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:contentDescription="Información sobre recuperación"
+                    android:src="@drawable/ic_privacidad_sleeptrack" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="Te enviaremos instrucciones para recuperar tu cuenta."
+                    android:textColor="#3C285B"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnviarRecuperacion"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="29dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Enviar recuperación"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#7053B0"
+                app:cornerRadius="16dp" />
+
+            <TextView
+                android:id="@+id/btnVolverLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Volver al inicio de sesión"
+                android:textColor="#7053B0"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F9"
+    tools:context=".alarma">
+
+    <ScrollView
+        android:id="@+id/scrollAlarma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TU ALARMA"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#7053B0"
+                    android:letterSpacing="0.14" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prepara tu descanso."
+                    android:textColor="#211A2D"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:layout_marginTop="10dp"
+                    android:maxLines="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="16sp"
+                    android:autoSizeMaxTextSize="26sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:includeFontPadding="false" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Planifica un descanso más tranquilo."
+                    android:textColor="#7D728C"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorHoraAlarma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/st_ae_hero"
+                android:padding="22dp"
+                android:orientation="vertical"
+                android:paddingBottom="34dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PRÓXIMA ALARMA"
+                            android:textColor="#D0BCEC"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.08" />
+
+                        <TextView
+                            android:id="@+id/txtHoraAlarma"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="07:00"
+                            android:textColor="#FFFFFF"
+                            android:textSize="54sp"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Cambiar hora de la alarma"
+                            android:fontFamily="sans-serif-light"
+                            android:maxLines="1"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="32sp"
+                            android:autoSizeMaxTextSize="54sp"
+                            android:autoSizeStepGranularity="1sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:id="@+id/txtDescripcionAlarma"
+                            android:text="Tu próximo despertar"
+                            android:textColor="#E5DCF1"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/transparent">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/st_ae_luna"
+                            android:contentDescription="Luna"
+                            android:tint="#D0BCEC" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#40364D" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btnSeleccionarHora"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:background="@drawable/st_ae_pill"
+                        android:text="Cambiar hora"
+                        android:textColor="#51357D"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnDuracion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp"
+                        android:text="Duración"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Configurar alarma por duración" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDuracionElegida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text=""
+                    android:gravity="center"
+                    android:textColor="#E3D7F2"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Tu rutina nocturna"
+                android:textColor="#2D2341"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/st_ae_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/st_ae_icon_bg">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/st_ae_luna"
+                        android:contentDescription="Rutina nocturna" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Prepararse para dormir"
+                        android:textStyle="bold"
+                        android:textColor="#302744"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Elige un momento de calma"
+                        android:textColor="#9B8EAD"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorMonitoreoNocturno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/st_ae_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ae_icon_bg">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/st_ae_monitoreo_nocturno"
+                            android:contentDescription="Monitoreo nocturno" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:text="Monitoreo nocturno"
+                        android:textColor="#302744"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="58dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/st_ae_icon_bg"
+                        android:contentDescription="Actividad del teléfono"
+                        android:padding="6dp"
+                        android:src="@drawable/st_telefono" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Actividad del teléfono"
+                            android:textColor="#302744"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Detectar actividad nocturna"
+                            android:textColor="#9385A6"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchMonitoreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:contentDescription="Monitoreo del teléfono"
+                        android:minHeight="48dp"
+                        app:thumbTint="@color/st_ae_switch_thumb"
+                        app:trackTint="@color/st_ae_switch_track" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/avisoMonitoreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/st_ae_notice"
+                    android:padding="10dp"
+                    android:text="Las activaciones de pantalla se registran como posibles interrupciones, no como despertares confirmados."
+                    android:textColor="#74658D"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#DFD1EF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="58dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/st_ae_icon_bg"
+                        android:contentDescription="Detección de sonidos"
+                        android:padding="6dp"
+                        android:src="@drawable/st_sonido" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Detección de sonidos"
+                            android:textColor="#302744"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Guardar sonidos relevantes"
+                            android:textColor="#9385A6"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchSonido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:contentDescription="Detección de sonidos"
+                        android:minHeight="48dp"
+                        app:thumbTint="@color/st_ae_switch_thumb"
+                        app:trackTint="@color/st_ae_switch_track" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/avisoSonido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/st_ae_notice"
+                    android:padding="10dp"
+                    android:text="Se utilizará el micrófono para detectar y guardar sonidos relevantes. Necesita permiso de audio."
+                    android:textColor="#74658D"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEditarRutina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="66dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/st_ae_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/st_ae_registros"
+                    android:contentDescription="Repetición"
+                    android:padding="6dp"
+                    android:background="@drawable/st_ae_icon_bg" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="Repetición"
+                    android:textColor="#302744"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtRutinaResumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="115dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:text="Una vez"
+                    android:textColor="#7053B0"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="›"
+                    android:textColor="#7053B0"
+                    android:textSize="26sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorHorarioMonitoreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/st_ae_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Horario del descanso programado"
+                    android:textColor="#302744"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Los días elegidos son los de despertar. Si cruzas medianoche, empieza la noche anterior."
+                    android:textColor="#9385A6"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:id="@+id/btnElegirInicioMonitoreo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/st_ae_field"
+                        android:padding="11dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comenzar"
+                            android:textSize="11sp"
+                            android:textColor="#897A9F" />
+
+                        <TextView
+                            android:id="@+id/txtHoraInicioMonitoreo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="22:00"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#7053B0" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#7053B0" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/st_ae_field"
+                        android:padding="11dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Despertar"
+                            android:textSize="11sp"
+                            android:textColor="#897A9F" />
+
+                        <TextView
+                            android:id="@+id/txtHoraFinMonitoreo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="07:00"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#7053B0" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="La alarma detiene la sesión al despertar."
+                    android:textSize="10sp"
+                    android:textColor="#9385A6" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtModoAlarma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Una sola alarma, sin monitoreo automático"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textColor="#897A9F" />
+
+            <TextView
+                android:id="@+id/btnTerminado"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="19dp"
+                android:gravity="center"
+                android:background="@drawable/st_ae_primary"
+                android:text="Comenzar descanso"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnComenzarAhora"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:background="@drawable/st_ae_pill"
+                android:text="Descanso sin alarma"
+                android:textColor="#51357D"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/barraNavegacion"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/st_capsula_fondo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <FrameLayout
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/st_capsula_seleccionado">
+
+                <ImageButton
+                    android:id="@+id/navAlarma"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/st_capsula_alarma"
+                    android:contentDescription="Alarma"
+                    android:tint="#211A2D" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Alarma"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navRegistros"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_registros"
+                android:contentDescription="Registros"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Registros"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPatrones"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_patrones"
+                android:contentDescription="Patrones"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Patrones"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navConsejos"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_consejos"
+                android:contentDescription="Consejos"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Consejos"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPerfil"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_perfil"
+                android:contentDescription="Perfil"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

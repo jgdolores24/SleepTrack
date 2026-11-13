@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9FF"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="113dp"
+                android:layout_height="126dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/koala1" />
+
+            <TextView
+                android:id="@+id/appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SleepTrack"
+                android:textColor="#181414"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="Ingresa tu correo electrónico para&#10;iniciar sesión"
+                android:textColor="#181414"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="295dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/borde_input"
+                android:backgroundTint="#EEECEF"
+                android:hint="correoelectrónico@dominio.com"
+                android:inputType="textEmailAddress"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:singleLine="true"
+                android:textColor="#181414"
+                android:textColorHint="#888888"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etContrasena"
+                android:layout_width="295dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/borde_input"
+                android:backgroundTint="#EEECEF"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:singleLine="true"
+                android:textColor="#181414"
+                android:textColorHint="#888888"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_continuar"
+                android:layout_width="295dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="13dp"
+                android:backgroundTint="#1A0D0D"
+                android:text="Continuar"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/btn_olvidar"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:background="@android:color/transparent"
+                android:text="¿Olvidaste tu contraseña?"
+                android:textColor="#0B0909"
+                android:textSize="14sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="295dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/line" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_google"
+                android:layout_width="295dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#EBEBEB"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:text="Continuar con Google"
+                android:textAllCaps="false"
+                android:textColor="#181414"
+                android:textSize="17sp"
+                app:cornerRadius="24dp"
+                app:icon="@drawable/icon_1"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="28dp"
+                app:iconTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_crearcuenta"
+                android:layout_width="295dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#EEECEF"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Crear una nueva cuenta"
+                android:textAllCaps="false"
+                android:textColor="#181414"
+                android:textSize="16sp"
+                app:cornerRadius="24dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

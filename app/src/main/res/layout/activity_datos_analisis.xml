@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9FF"
+    tools:context=".Datos_analisis">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="26dp"
+            android:paddingTop="43dp"
+            android:paddingEnd="26dp"
+            android:paddingBottom="28dp">
+
+            <TextView
+                android:id="@+id/datos_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conozcámonos"
+                android:textColor="#282039"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Solo los datos necesarios para personalizar tu experiencia."
+                android:textColor="#877E9A"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="Paso 1 de 3"
+                android:textColor="#7053B0"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginTop="7dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#E5D8FA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#7053B0" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="#E5D8FA" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Nombre"
+                android:textSize="12sp"
+                android:textColor="#877E9A" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="7dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#EDE6F5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="13dp"
+                        android:src="@drawable/ic_usuario_sleeptrack"
+                        android:contentDescription="Icono de usuario" />
+
+                    <EditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="Escribe tu nombre"
+                        android:inputType="textPersonName|textCapWords"
+                        android:singleLine="true"
+                        android:textColor="#282039"
+                        android:textColorHint="#877E9A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:text="Año de nacimiento"
+                android:textSize="12sp"
+                android:textColor="#877E9A" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedorAnio"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/fondo_selector_sleeptrack">
+
+                <TextView
+                    android:id="@+id/spAnioNacimiento"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:text="Seleccionar año"
+                    android:textColor="#282039"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txtSeleccionarAnio" />
+
+                <TextView
+                    android:id="@+id/txtSeleccionarAnio"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#877E9A"
+                    android:textSize="28sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:text="Sexo"
+                android:textSize="12sp"
+                android:textColor="#877E9A" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedorSexo"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/fondo_selector_sleeptrack">
+
+                <TextView
+                    android:id="@+id/spSexo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:text="Seleccionar"
+                    android:textColor="#282039"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txtSeleccionarSexo" />
+
+                <TextView
+                    android:id="@+id/txtSeleccionarSexo"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#877E9A"
+                    android:textSize="28sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:text="Peso y altura"
+                android:textSize="12sp"
+                android:textColor="#877E9A" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contenedorPeso"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/fondo_selector_sleeptrack">
+
+                    <TextView
+                        android:id="@+id/spPeso"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:gravity="bottom"
+                        android:paddingStart="13dp"
+                        android:text="Seleccionar"
+                        android:textColor="#3C285B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/txtSeleccionarPeso"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtSeleccionarPeso"
+                        android:layout_width="35dp"
+                        android:layout_height="43dp"
+                        android:gravity="center"
+                        android:text="›"
+                        android:textColor="#877E9A"
+                        android:textSize="25sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Peso"
+                        android:textColor="#877E9A"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/spPeso" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contenedorAltura"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/fondo_selector_sleeptrack">
+
+                    <TextView
+                        android:id="@+id/spAltura"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:gravity="bottom"
+                        android:paddingStart="13dp"
+                        android:text="Seleccionar"
+                        android:textColor="#3C285B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/txtSeleccionarAltura"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtSeleccionarAltura"
+                        android:layout_width="35dp"
+                        android:layout_height="43dp"
+                        android:gravity="center"
+                        android:text="›"
+                        android:textColor="#877E9A"
+                        android:textSize="25sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Altura"
+                        android:textColor="#877E9A"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/spAltura" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSiguiente"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="48dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Siguiente"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:backgroundTint="#7053B0"
+                app:cornerRadius="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Podrás editar estos datos desde tu perfil."
+                android:textColor="#877E9A"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

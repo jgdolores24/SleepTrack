@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F9">
+
+    <ScrollView
+        android:id="@+id/scrollPerfil"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mi perfil"
+                android:textColor="#1C1823"
+                android:textStyle="bold"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tu información personal y preferencias"
+                android:textColor="#897C9A"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/st_pf_hero"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="22dp"
+                android:paddingBottom="42dp">
+
+                <ImageView
+                    android:id="@+id/imgFotoPerfil"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:background="@drawable/st_pf_avatar"
+                    android:src="@drawable/st_pf_person"
+                    android:padding="16dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Foto de perfil, pulsar para cambiar"
+                    android:clipToOutline="true" />
+
+                <TextView
+                    android:id="@+id/btnCambiarFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:padding="6dp"
+                    android:text="Cambiar foto"
+                    android:textColor="#D8C5F4"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:minHeight="48dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/txtNombrePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:text="Cargando perfil..."
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/txtCorreoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:textColor="#CEC4DA"
+                    android:textSize="13sp"
+                    android:breakStrategy="simple" />
+
+                <TextView
+                    android:id="@+id/btnEditarPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/st_pf_edit"
+                    android:paddingStart="22dp"
+                    android:paddingEnd="22dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Editar perfil"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:textColor="#211A2D"
+                    android:minHeight="48dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="10dp"
+                android:text="Datos personales"
+                android:textColor="#1C1823"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/st_pf_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:text="Año de nacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtAnioPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#EFEAF4" />
+
+                <TextView
+                    android:text="Sexo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtSexoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#EFEAF4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:text="Peso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPesoPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:text="—" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:text="Altura"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtAlturaPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:text="—" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="10dp"
+                android:text="Mi descanso"
+                android:textColor="#1C1823"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/st_pf_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:text="Hora habitual de dormir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtDormirPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#EFEAF4" />
+
+                <TextView
+                    android:text="Hora habitual de despertar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtDespertarPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="10dp"
+                android:text="Datos de salud registrados"
+                android:textColor="#1C1823"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/st_pf_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:text="Molestias habituales"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtMolestiasPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#EFEAF4" />
+
+                <TextView
+                    android:text="Suplementos registrados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#857C90"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtSuplementosPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#1C1823"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="—" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/st_pf_logout"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Cerrar sesión"
+                android:textColor="#A04766"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="56dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/barraNavegacion"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/st_capsula_fondo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navAlarma"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_alarma"
+                android:contentDescription="Alarma"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Alarma"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navRegistros"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_registros"
+                android:contentDescription="Registros"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Registros"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPatrones"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_patrones"
+                android:contentDescription="Patrones"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Patrones"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navConsejos"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_consejos"
+                android:contentDescription="Consejos"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Consejos"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <FrameLayout
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/st_capsula_seleccionado">
+
+                <ImageButton
+                    android:id="@+id/navPerfil"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/st_capsula_perfil"
+                    android:contentDescription="Perfil"
+                    android:tint="#211A2D" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

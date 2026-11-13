@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F9">
+
+    <ScrollView
+        android:id="@+id/scrollFeedback"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/zonaAcciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="¿Cómo fue tu noche?"
+                android:textColor="#1C1823"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TU PERCEPCIÓN TAMBIÉN CUENTA"
+                android:textColor="#756B80"
+                android:textSize="10sp"
+                android:letterSpacing="0.05"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Elige cómo te sientes al despertar."
+                android:textColor="#756B80"
+                android:textSize="13sp"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="26dp"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/btnCalidadBuena"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp"
+                        android:background="@drawable/st_ff_choice"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Bueno"
+                        android:textColor="#211A2D"
+                        android:textSize="13sp"
+                        android:contentDescription="Calificar como bueno"
+                        android:padding="16dp"
+                        android:drawableTop="@drawable/st_ff_bueno"
+                        android:drawablePadding="12dp" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/btnCalidadRegular"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp"
+                        android:background="@drawable/st_ff_choice"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Regular"
+                        android:textColor="#211A2D"
+                        android:textSize="13sp"
+                        android:contentDescription="Calificar como regular"
+                        android:padding="16dp"
+                        android:drawableTop="@drawable/st_ff_regular"
+                        android:drawablePadding="12dp" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/btnCalidadMala"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp"
+                        android:background="@drawable/st_ff_choice"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Malo"
+                        android:textColor="#211A2D"
+                        android:textSize="13sp"
+                        android:contentDescription="Calificar como malo"
+                        android:padding="16dp"
+                        android:drawableTop="@drawable/st_ff_malo"
+                        android:drawablePadding="12dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtNivelDescanso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="Selecciona una opción"
+                    android:textColor="#7053B0"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:background="@drawable/st_ff_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tu descanso registrado"
+                    android:textColor="#1C1823"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Duración"
+                            android:textColor="#756B80"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/txtHorasFeedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="--"
+                            android:textColor="#1C1823"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Inicio"
+                            android:textColor="#756B80"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/txtInicioEvaluacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="--:--"
+                            android:textColor="#1C1823"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fin"
+                            android:textColor="#756B80"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/txtFinEvaluacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="--:--"
+                            android:textColor="#1C1823"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#DAD0E6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Referencia de 8 h"
+                            android:textColor="#756B80"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/txtObjetivoPorcentaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Sin datos"
+                            android:textColor="#1C1823"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Índice orientativo"
+                            android:textColor="#756B80"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/txtPorcentajeDescanso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="—"
+                            android:textColor="#1C1823"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtExplicacionIndice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Se calcula con tu valoración y la duración registrada, cuando hay datos suficientes."
+                    android:textColor="#756B80"
+                    android:textSize="11sp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorMolestiasDespertar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Tiempo registrado, no sueño confirmado. Índice informativo, no diagnóstico."
+                android:textColor="#756B80"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/zonaAcciones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="22dp"
+        android:paddingEnd="22dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#F6F3F9">
+
+        <Button
+            android:id="@+id/btnGuardarEvaluacion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/st_ff_button"
+            android:backgroundTint="#1C1823"
+            android:text="Guardar evaluación"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:backgroundTint="#1C1823"
+            android:stateListAnimator="@null"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp" />
+
+        <TextView
+            android:id="@+id/btnOmitirEvaluacion"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Ahora no"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#756B80"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

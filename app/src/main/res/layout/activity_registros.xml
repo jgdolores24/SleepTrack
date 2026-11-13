@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F9">
+
+    <ScrollView
+        android:id="@+id/scrollRegistros"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/txtDia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TU DESCANSO"
+                android:textColor="#7053B0"
+                android:letterSpacing="0.14"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tu descanso en una mirada."
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#211A2D"
+                android:fontFamily="sans-serif"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="26sp"
+                android:autoSizeStepGranularity="1sp" />
+
+            <TextView
+                android:id="@+id/txtFechaSeleccionada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Seleccionando fecha..."
+                android:textColor="#7D728C"
+                android:textSize="13sp"
+                android:textStyle="normal" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollDias"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:id="@+id/contenedorDias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical" />
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/tarjetaResumenSueno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/st_ecl_hero"
+                android:orientation="vertical"
+                android:padding="22dp"
+                android:paddingBottom="34dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="TIEMPO EN DESCANSO"
+                        android:textColor="#D0BCEC"
+                        android:textStyle="bold"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.08" />
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/st_ecl_luna"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        app:tint="#D0BCEC" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtHorasDormidasCirculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="— h — min"
+                    android:textColor="#FFFFFF"
+                    android:textSize="46sp"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    android:fontFamily="sans-serif-light"
+                    android:maxLines="1"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="26sp"
+                    android:autoSizeMaxTextSize="46sp"
+                    android:autoSizeStepGranularity="1sp" />
+
+                <TextView
+                    android:id="@+id/txtEtiquetaDuracion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Tiempo en descanso"
+                    android:textColor="#D5CDE0"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/progresoSueno"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="15dp"
+                    android:max="480"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/st_ecl_progress_dark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Referencia orientativa: 8 horas (adultos)"
+                    android:textColor="#BFB4CC"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/txtObjetivoResumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Objetivo 8 h"
+                    android:textColor="#D0BCEC"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:background="@drawable/st_ecl_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Duración registrada"
+                            android:textColor="#80748F"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtDuracionSueno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Sin registro"
+                            android:textColor="#38264E"
+                            android:textStyle="bold"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/txtEtiquetaCalidad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Índice orientativo"
+                            android:textColor="#80748F"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtCalidadSueno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="—"
+                            android:textColor="#7053B0"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Conciliación · sesión principal"
+                            android:textColor="#80748F"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtMinutosDormirse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="-- min"
+                            android:textColor="#38264E"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ProgressBar
+                            android:id="@+id/progresoDormirse"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="20dp"
+                            android:max="60"
+                            android:progress="0"
+                            android:progressDrawable="@drawable/st_ecl_progress" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Última percepción personal"
+                            android:textColor="#80748F"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtValoracionPersonal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Sin evaluación"
+                            android:textColor="#38264E"
+                            android:textStyle="bold"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/seccionRegistroRapido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/st_ecl_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Registro rápido"
+                        android:textColor="#30264A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btnRapidoVerTodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ecl_pill"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Ver todo ›"
+                        android:textColor="#7053B0"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Registra tus actividades del día"
+                    android:textColor="#84738F"
+                    android:textSize="11sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fillViewport="true"
+                    android:scrollbars="none"
+                    android:clipToPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnRapidoBebidas"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/st_ecl_icon_bg"
+                                android:contentDescription="Registrar bebidas"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/st_ecl_bebidas" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="Bebidas"
+                                android:textColor="#30264A"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnRapidoAlcohol"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/st_ecl_icon_bg"
+                                android:contentDescription="Registrar alcohol"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/st_ecl_alcohol" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="Alcohol"
+                                android:textColor="#30264A"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnRapidoCigarrillos"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/st_ecl_icon_bg"
+                                android:contentDescription="Registrar cigarrillos"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/st_ecl_cigarrillos" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="Cigarrillos"
+                                android:textColor="#30264A"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnRapidoSuplementos"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/st_ecl_icon_bg"
+                                android:contentDescription="Registrar suplementos"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/st_ecl_suplementos" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="Suplementos"
+                                android:textColor="#30264A"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnRapidoMolestias"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/st_ecl_icon_bg"
+                                android:contentDescription="Registrar molestias"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/st_ecl_molestias" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="Molestias"
+                                android:textColor="#30264A"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorGrafico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/st_ecl_card"
+                android:orientation="vertical"
+                android:padding="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Detección automática"
+                android:textColor="#2E2342"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Señales disponibles durante tu descanso."
+                android:textColor="#8F819B"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/tarjetaMonitoreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ecl_card"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/st_ecl_telefono"
+                    android:contentDescription="Monitoreo del teléfono"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/st_ecl_icon_bg"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Monitoreo del teléfono"
+                        android:textColor="#30264A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtMonitoreoTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Sin activaciones registradas"
+                        android:textColor="#84738F"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaRuidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ecl_card"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/st_ecl_audios"
+                    android:contentDescription="Ruidos guardados"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/st_ecl_icon_bg"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ruidos guardados"
+                        android:textColor="#30264A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtRuidosGuardados"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Sin audios registrados"
+                        android:textColor="#84738F"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="80dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <TextView
+                        android:id="@+id/btnVerAudios"
+                        android:layout_width="76dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="start|bottom"
+                        android:background="@drawable/st_ecl_pill"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="Ver audios"
+                        android:textColor="#7053B0"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/txtCantidadAudios"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="top|end"
+                        android:background="@drawable/st_ecl_badge"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaDespertares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ecl_card"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/st_ecl_despertares"
+                    android:contentDescription="Despertares nocturnos"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/st_ecl_icon_bg"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Despertares nocturnos"
+                        android:textColor="#30264A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtDespertaresNocturnos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Sin despertares registrados"
+                        android:textColor="#84738F"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtNotaDeteccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Las activaciones de pantalla son posibles interrupciones; no confirman despertares ni sueño real."
+                android:textColor="#8A8299"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/barraNavegacion"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/st_capsula_fondo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navAlarma"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_alarma"
+                android:contentDescription="Alarma"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Alarma"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <FrameLayout
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/st_capsula_seleccionado">
+
+                <ImageButton
+                    android:id="@+id/navRegistros"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Registros"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/st_capsula_registros"
+                    android:tint="#211A2D" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Registros"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPatrones"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_patrones"
+                android:contentDescription="Patrones"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Patrones"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navConsejos"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_consejos"
+                android:contentDescription="Consejos"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Consejos"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPerfil"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_perfil"
+                android:contentDescription="Perfil"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

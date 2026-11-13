@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F9"
+    tools:context=".Actividad">
+
+    <ScrollView
+        android:id="@+id/scrollActividad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/barraNavegacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/txtEtiquetaActividad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="MIS HÁBITOS"
+                android:textColor="#857C90"
+                android:letterSpacing="0.14"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTituloActividad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tus hábitos cuentan."
+                android:textColor="#1C1823"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtEtiquetaActividad"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/txtDescripcionActividad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Registra tu día y conoce mejor tu descanso."
+                android:textColor="#857C90"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloActividad"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/tarjetaFecha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/st_ac_dark"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingBottom="34dp"
+                app:layout_constraintTop_toBottomOf="@id/txtDescripcionActividad"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/st_ac_calendar"
+                        android:background="@drawable/st_ac_dark_field"
+                        android:padding="9dp"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="TU REGISTRO DIARIO"
+                        android:textSize="11sp"
+                        android:textColor="#D8C5F4"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.10" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtFechaActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="Seleccionar fecha"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:minHeight="48dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:textStyle="bold"
+                    android:drawableEnd="@drawable/st_ac_chevron"
+                    android:drawablePadding="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Toca la fecha para elegir otro día"
+                    android:textColor="#C2B8CE"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaMelatonina"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaFecha"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Suplementos"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_suplementos" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Suplementos"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Registra qué tomaste y a qué hora."
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtResumenSuplementos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sin consumos registrados"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSuplementos"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Elegir"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaBebidas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaMelatonina"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Bebidas"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_bebidas" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bebidas"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Café, té, energizantes y otras bebidas."
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtResumenBebidas"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sin bebidas registradas"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBebidas"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Elegir"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaAlcohol"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaBebidas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Alcohol"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_alcohol" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Alcohol"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="¿Consumiste alcohol ese día?"
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchAlcohol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:contentDescription="Consumo de alcohol"
+                        android:minHeight="48dp"
+                        app:thumbTint="@color/st_ac_switch_thumb"
+                        app:trackTint="@color/st_ac_switch_track" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtHoraAlcohol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hora: sin registrar"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHoraAlcohol"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Hora"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaCigarrillos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaAlcohol"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Cigarrillos"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_cigarrillos" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cigarrillos"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Registra la cantidad y la hora."
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtResumenCigarrillos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sin registros"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnCigarrillos"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Elegir"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaMolestias"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaCigarrillos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Molestias"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_molestias" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Molestias"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Registra qué sentiste y cuándo."
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtResumenMolestias"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sin molestias registradas"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnMolestias"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Registrar"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tarjetaTrabajoNocturno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/st_ac_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaMolestias"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/st_ac_icon"
+                        android:contentDescription="Trabajo nocturno"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/st_ac_trabajo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trabajo nocturno"
+                            android:textColor="#1C1823"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="¿Trabajaste durante la noche?"
+                            android:textColor="#857C90"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchTrabajoNocturno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:contentDescription="Trabajo nocturno"
+                        android:minHeight="48dp"
+                        app:thumbTint="@color/st_ac_switch_thumb"
+                        app:trackTint="@color/st_ac_switch_track" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtHorarioTrabajo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sin horario registrado"
+                        android:textColor="#857C90"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHorarioTrabajo"
+                        android:layout_width="104dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EEE6F8"
+                        android:text="Horario"
+                        android:textAllCaps="false"
+                        android:textColor="#7053B0"
+                        android:textSize="13sp"
+                        android:minHeight="48dp"
+                        android:minWidth="0dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/st_ac_action"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="#EEE6F8"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGuardarActividad"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="22dp"
+                android:backgroundTint="#7053B0"
+                android:text="Guardar actividad"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tarjetaTrabajoNocturno"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/st_ac_primary"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:minWidth="0dp"
+                android:minHeight="48dp"
+                android:stateListAnimator="@null"
+                app:backgroundTint="#7053B0"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/barraNavegacion"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/st_capsula_fondo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navAlarma"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_alarma"
+                android:contentDescription="Alarma"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Alarma"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <FrameLayout
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/st_capsula_seleccionado">
+
+                <ImageButton
+                    android:id="@+id/navRegistros"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/st_capsula_registros"
+                    android:contentDescription="Registros"
+                    android:tint="#211A2D" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Registros"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPatrones"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_patrones"
+                android:contentDescription="Patrones"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Patrones"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navConsejos"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_consejos"
+                android:contentDescription="Consejos"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Consejos"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@+id/navPerfil"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:padding="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/st_capsula_perfil"
+                android:contentDescription="Perfil"
+                android:tint="#C5BFCF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:text="Perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnConfiguracionActividad"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:contentDescription="Configuración"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
