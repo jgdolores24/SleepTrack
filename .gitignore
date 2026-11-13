@@ -1,0 +1,36 @@
+# Gradle / compilacion
+.gradle/
+**/build/
+build/
+.kotlin/
+.cxx/
+.externalNativeBuild/
+captures/
+
+# Configuracion local de Android Studio
+.idea/
+*.iml
+local.properties
+
+# Archivos compilados
+*.apk
+*.aab
+output-metadata.json
+*.hprof
+*.log
+
+# Credenciales y configuracion especifica
+*.jks
+*.keystore
+*.pem
+*.p12
+*.pfx
+.env
+.env.*
+**/google-services.json
+**/service-account*.json
+**/*-firebase-adminsdk-*.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
